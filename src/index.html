@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hey I'm Subash</title>
+    <script src="scroll.js" defer></script>
     <script src="../src/target.js" defer></script>
     <script src="../src/menu.js" defer></script>
     <script src="../src/coolGuyLook.js" defer></script>
@@ -11,21 +12,29 @@
   </head>
   <body scroll="no">
     <div id="rotate__phone"></div>
+    <ul class="nav__circles__container">
+      <li class="nav__circle active" onclick="MoveToPage('home')"></li>
+      <li class="nav__circle" onclick="MoveToPage('about')"></li>
+      <li class="nav__circle" onclick="MoveToPage('project')"></li>
+      <li class="nav__circle" onclick="MoveToPage('contact')"></li>
+    </ul>
     <audio src="../audio/gunShoot.wav" id="audio"></audio>
     <div id="mobile__menu" class="mobile__menu" aria-expanded="false">
       <ul class="mobile__menu__container">
         <li><a href="#home" class="mobile_link">Home</a></li>
         <li><a href="#about" class="mobile_link">About</a></li>
+        <li><a href="#project" class="mobile_link">Projects</a></li>
         <li><a href="#contact" class="mobile_link">Contact</a></li>
       </ul>
     </div>
     <header class="navbar">
       <div class="navbar__container">
-        <h2 class="logo__text">Subash</h2>
+        <a class="logo__text" href="#home">Subash</a>
         <ul class="navlinks__container">
           <li class="nav__li"><a href="#home" class="link">Home</a></li>
           <li class="nav__li"><a href="#about" class="link">About</a></li>
-          <li class="nav__li"><a href="#contact" class="link">Projects</a></li>
+          <li class="nav__li"><a href="#project" class="link">Projects</a></li>
+          <li class="nav__li"><a href="#contact" class="link">Contact</a></li>
         </ul>
         <div class="toggle">
           <button
@@ -70,22 +79,23 @@
         <div class="my__skills">
           <p class="about__subtitle">My Skills<br /></p>
           <div class="target__box">
-            <div class="unity target"></div>
-            <div class="html target"></div>
-            <div class="css target"></div>
-            <div class="js target"></div>
-            <div class="react target"></div>
-            <div class="python target"></div>
-            <div class="java target"></div>
-            <div class="mongodb target"></div>
+            <div class="unity target target__hover"></div>
+            <div class="html target target__hover"></div>
+            <div class="css target target__hover"></div>
+            <div class="js target target__hover"></div>
+            <div class="react target target__hover"></div>
+            <div class="python target target__hover"></div>
+            <div class="java target target__hover"></div>
+            <div class="mongodb target target__hover"></div>
           </div>
         </div>
       </section>
-      <a id="contact"></a>
+      <a id="project"></a>
       <section class="contact__page">
         <h2 class="section__title">Project Page</h2>
       </section>
     </div>
+    <a id="contact"></a>
     <footer class="footer">
       <h2 class="email">it.subashaa@gmail.com</h2>
       <div class="socials">
