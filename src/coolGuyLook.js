@@ -86,13 +86,6 @@ function draw(canvas, evt) {
   ctx.lineWidth = 7
   ctx.beginPath()
   ctx.moveTo(pos.x, pos.y)
-
-  console.log(pos.x + " " + pos.y)
-  // if (pos.x > canvas.width / 2) {
-  //   ctx.lineTo(canvas.width / 2 + 50, canvas.height / 2 + 80)
-  // } else {
-  //   ctx.lineTo(canvas.width / 2 - 50, canvas.height / 2 + 80)
-  // }
   ctx.lineTo(gunPos.x, gunPos.y)
   ctx.stroke()
 }

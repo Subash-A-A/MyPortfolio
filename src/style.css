@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
 
 :root {
   --font: "Poppins", sans-serif;
+  /* --font: "Amatic SC", cursive; */
+  --font2: "Bangers", cursive;
+  /* --font: "Mochiy Pop One", sans-serif; */
   --primary1: #3490de;
   --primary2: #ff2e63;
   --intro: #000;
@@ -11,6 +17,7 @@
   --footerHeight: 50vh;
   --targetSize: 70px;
   --targetMobileSize: 30px;
+  --logoSize: 34px;
 }
 
 * {
@@ -84,7 +91,6 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 50px;
 }
 
 .about__content__box {
@@ -96,15 +102,31 @@ section {
   align-items: center;
   width: 350px;
   height: 350px;
-  color: #fff;
+  color: rgb(31, 31, 31);
   padding: 30px;
   border-radius: 15px;
   text-align: center;
+  background-color: #f3f3f33b;
+  z-index: 4;
+}
+.about__content__box:hover {
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.247);
 }
 .about__subtitle {
-  font-size: 50px;
+  transition: all 0.3s ease;
+  font-family: var(--font2);
+  font-size: 40px;
+  color: #00203b;
+  padding: 10px 20px;
+  border-radius: 15px;
   font-weight: bold;
   text-align: center;
+}
+.about__content__box:hover .about__subtitle {
+  letter-spacing: 10px;
+}
+.my__skills:hover .about__subtitle {
+  letter-spacing: 10px;
 }
 .about__details {
   font-size: 18px;
@@ -118,6 +140,10 @@ section {
   height: 350px;
   gap: 20px;
   text-align: center;
+  background-color: #f3f3f33b;
+  padding: 30px;
+  border-radius: 15px;
+  z-index: 4;
 }
 .target__box {
   display: grid;
@@ -132,7 +158,6 @@ section {
   transition: all 0.5s ease;
   background-size: contain;
   background-repeat: no-repeat;
-  /* cursor: pointer; */
   justify-self: center;
   align-self: center;
   z-index: 4;
@@ -158,6 +183,9 @@ section {
 }
 .python {
   background-image: url("../images/python.png");
+}
+.mongodb {
+  background-image: url("../images/mongo.png");
 }
 .cool__guy__container {
   animation-name: Idle;
@@ -189,9 +217,9 @@ section {
 }
 #attack__point {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -200%);
+  top: 40%;
+  left: 90%;
+  transform: translate(-50%, -50%);
 }
 .platform {
   position: absolute;
@@ -240,6 +268,7 @@ section {
   font-size: 42px;
   font-weight: 700;
   color: var(--intro);
+  font-family: var(--font2);
   border-radius: 10px;
   text-align: center;
   transition: 0.3s all ease;
@@ -296,6 +325,8 @@ section {
   cursor: pointer;
   border-radius: 20px;
   transition: 0.3s all ease;
+  font-family: var(--font2);
+  font-size: var(--logoSize);
 }
 
 .logo__text:hover {
@@ -551,6 +582,7 @@ section {
     font-size: 12px;
   }
   .my__skills {
+    padding: 5px;
     width: 160px;
     height: 160px;
     gap: 5px;
