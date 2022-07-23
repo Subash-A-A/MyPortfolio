@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hey I'm Subash</title>
+    <script src="../src/target.js" defer></script>
+    <script src="../src/menu.js" defer></script>
+    <script src="../src/coolGuyLook.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body scroll="no">
+    <div id="rotate__phone"></div>
+    <audio src="../audio/gunShoot.wav" id="audio"></audio>
+    <div id="mobile__menu" class="mobile__menu" aria-expanded="false">
+      <ul class="mobile__menu__container">
+        <li><a href="#home" class="mobile_link">Home</a></li>
+        <li><a href="#about" class="mobile_link">About</a></li>
+        <li><a href="#contact" class="mobile_link">Contact</a></li>
+      </ul>
+    </div>
+    <header class="navbar">
+      <div class="navbar__container">
+        <h2 class="logo__text">Subash</h2>
+        <ul class="navlinks__container">
+          <li class="nav__li"><a href="#home" class="link">Home</a></li>
+          <li class="nav__li"><a href="#about" class="link">About</a></li>
+          <li class="nav__li"><a href="#contact" class="link">Projects</a></li>
+        </ul>
+        <div class="toggle">
+          <button
+            class="toggle__button"
+            aria-controls="mobile__menu"
+            data-button-clicked="false"
+          ></button>
+        </div>
+      </div>
+    </header>
+    <div class="section__container">
+      <a id="home"></a>
+      <section class="hero__page">
+        <canvas class="webgl"></canvas>
+        <div class="intro">
+          <h1 class="intro__text">I'm Subash</h1>
+          <p class="intro__paragraph">Fullstack and Game Dev</p>
+        </div>
+      </section>
+      <a id="about"></a>
+      <section class="about__page">
+        <canvas id="about__canvas"></canvas>
+        <div class="about__content__box">
+          <p class="about__subtitle">About Me<br /></p>
+          <p class="about__details">
+            I'm Junior at PSG Tech <br />
+            Currently pursuing B.Tech in IT <br />
+            I ❤️ making Games & Websites <br />
+          </p>
+        </div>
+        <div class="about__container">
+          <div class="cool__guy__container">
+            <div class="cool__guy__img">
+              <div class="cool__guy__weapon">
+                <div id="attack__point"></div>
+              </div>
+            </div>
+          </div>
+          <div class="grass__platform platform"></div>
+          <div class="front__grass__layer platform"></div>
+        </div>
+        <div class="my__skills">
+          <p class="about__subtitle">My Skills<br /></p>
+          <div class="target__box">
+            <div class="unity target"></div>
+            <div class="html target"></div>
+            <div class="css target"></div>
+            <div class="js target"></div>
+            <div class="react target"></div>
+            <div class="python target"></div>
+            <div class="java target"></div>
+          </div>
+        </div>
+      </section>
+      <a id="contact"></a>
+      <section class="contact__page">
+        <h2 class="section__title">Project Page</h2>
+      </section>
+    </div>
+    <footer class="footer">
+      <h2 class="email">it.subashaa@gmail.com</h2>
+      <div class="socials">
+        <div class="github">Github</div>
+        <div class="linkedin">Linkedin</div>
+        <div class="instagram">Instagram</div>
+        <div class="twitter">Twitter</div>
+      </div>
+    </footer>
+  </body>
+</html>
