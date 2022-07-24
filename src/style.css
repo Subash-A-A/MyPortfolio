@@ -311,7 +311,7 @@ section {
   transform: translateY(-50%);
   padding-left: 20px;
   gap: 5vh;
-  z-index: 10;
+  z-index: 8;
 }
 
 .nav__circle {

@@ -1,16 +1,11 @@
 const toggle = document.querySelector(".toggle__button")
 const menu = document.querySelector(".mobile__menu")
 
+const sections = ["#home", "#about", "#project", "#contact"]
+
 const navCircleMenu = document.querySelector(
   ".nav__circles__container"
 ).childNodes
-
-navCircleMenu.forEach((circle) => {
-  circle.addEventListener("click", () => {
-    removeActive()
-    circle.classList.add("active")
-  })
-})
 
 toggle.addEventListener("click", () => {
   const check = menu.getAttribute("aria-expanded")
@@ -31,7 +26,16 @@ function MoveToPage(url) {
 }
 
 function removeActive() {
-  navCircleMenu.forEach((circle) => {
-    circle.classList.remove("active")
+  navCircleMenu.forEach((e) => {
+    if (e.classList != undefined) {
+      e.classList.remove("active")
+    }
   })
+}
+function HashChange() {
+  // will print the hash of anchor tag
+  var hash = window.location.hash
+  console.log(hash)
+  removeActive()
+  navCircleMenu[sections.indexOf(hash)].classList.add("active")
 }
