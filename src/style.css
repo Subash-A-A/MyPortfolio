@@ -195,6 +195,9 @@ section {
 .mongodb {
   background-image: url("../images/mongo.png");
 }
+.node {
+  background-image: url("../images/node.png");
+}
 .cool__guy__container {
   animation-name: Idle;
   animation-duration: 0.8s;
@@ -355,6 +358,7 @@ section {
   list-style: none;
   display: flex;
 }
+
 .logo__text {
   text-decoration: none;
   color: #000;
