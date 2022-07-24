@@ -19,6 +19,8 @@
   --targetMobileSize: 30px;
   --logoSize: 34px;
   --letterSpacing: 10px;
+  --zombXOffset: 10vw;
+  --zombHeight: 25vh;
 }
 
 * {
@@ -249,9 +251,63 @@ section {
   z-index: 6;
 }
 /* Contact Page */
-.contact__page {
-  background: var(--primary2);
+.project__page {
+  position: relative;
+  background-color: var(--primary2);
   color: #fff;
+}
+.project__display {
+  position: relative;
+  width: 60vw;
+  height: 65vh;
+  border-radius: 30px;
+  background-color: #00203b;
+}
+.project__div {
+  width: 100%;
+  height: 0%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform-origin: center;
+  transform: scale(0) rotateX(180deg);
+  filter: blur(10px);
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+.active__project {
+  opacity: 1;
+  filter: blur(0px);
+  transform: scale(1) rotateX(0deg);
+  height: 100%;
+  display: flex;
+}
+
+.position__right {
+  right: var(--zombXOffset);
+}
+.position__left {
+  left: var(--zombXOffset);
+}
+.zomb__container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.zomb__guy__chase {
+  background-image: url("../images/ZombIdle.gif");
+  height: var(--zombHeight);
+  aspect-ratio: 0.673;
+  background-size: contain;
+  border-radius: 30px;
+  transform: scaleX(-1);
+  z-index: 2;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 .flip {
   transform: scaleX(-1);
@@ -259,7 +315,73 @@ section {
 .fall {
   transform: rotateX(-90deg) rotateY(-180deg);
 }
+.zomb__guy__chase:hover {
+  background-image: url("../images/ZombChase.gif");
+}
 
+/* Projects URL */
+.tesla {
+  background-image: url("../images/projects/tesla.png");
+}
+.netflix {
+  background-image: url("../images/projects/netflix.png");
+}
+.ggspot {
+  background-image: url("../images/projects/ggspot.png");
+}
+.pomodoro {
+  background-image: url("../images/projects/pomodoro.png");
+}
+.sandl {
+  background-image: url("../images/projects/sandl.png");
+}
+.kguy {
+  background-image: url("../images/projects/kguy.gif");
+}
+.scatch {
+  background-image: url("../images/projects/scatch.gif");
+}
+.project__img {
+  position: relative;
+  width: 85%;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 0.5s ease;
+  z-index: 3;
+}
+.project__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: var(--font2);
+  font-size: 42px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 5;
+}
+
+.project__img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #348fde69;
+  transition: all 0.3s ease;
+}
+
+.project__img:hover::before {
+  backdrop-filter: blur(5px);
+  height: 100%;
+}
+.project__img:hover .project__title {
+  opacity: 1;
+  filter: blur(0px);
+}
 /* Three Canvas */
 .webgl {
   width: 100vw;
@@ -324,12 +446,13 @@ section {
   transform: translateY(-50%);
   border-radius: 50%;
   background-color: #00203b;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
 }
-
+.nav__circle:hover {
+  background: #ff83ea;
+}
 .active {
-  /* transition: all 0.5s ease; */
   background: #b40397;
   box-shadow: 0px 0px 1px 1vh #ff68e6;
 }
