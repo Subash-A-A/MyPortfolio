@@ -3,9 +3,14 @@ const menu = document.querySelector(".mobile__menu")
 
 const sections = ["#home", "#about", "#project", "#contact"]
 
-const navCircleMenu = document.querySelector(
-  ".nav__circles__container"
-).childNodes
+const navCircleMenu = document.querySelector(".nav__circles__container")
+
+window.addEventListener("hashchange", () => {
+  removeActive()
+  var hash = window.location.hash
+  var children = [...navCircleMenu.children]
+  children[sections.indexOf(hash)].classList.add("active")
+})
 
 toggle.addEventListener("click", () => {
   const check = menu.getAttribute("aria-expanded")
@@ -26,16 +31,9 @@ function MoveToPage(url) {
 }
 
 function removeActive() {
-  navCircleMenu.forEach((e) => {
+  ;[...navCircleMenu.children].forEach((e) => {
     if (e.classList != undefined) {
       e.classList.remove("active")
     }
   })
-}
-function HashChange() {
-  // will print the hash of anchor tag
-  var hash = window.location.hash
-  console.log(hash)
-  removeActive()
-  navCircleMenu[sections.indexOf(hash)].classList.add("active")
 }
