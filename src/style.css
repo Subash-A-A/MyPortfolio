@@ -5,9 +5,7 @@
 
 :root {
   --font: "Poppins", sans-serif;
-  /* --font: "Amatic SC", cursive; */
   --font2: "Bangers", cursive;
-  /* --font: "Mochiy Pop One", sans-serif; */
   --primary1: #3490de;
   --primary2: #ff2e63;
   --intro: #000;
@@ -21,6 +19,7 @@
   --letterSpacing: 10px;
   --zombXOffset: 10vw;
   --zombHeight: 25vh;
+  --playerHeigth: 28.5vh;
 }
 
 * {
@@ -46,12 +45,56 @@ section {
   justify-content: center;
   align-items: center;
 }
+#pre__loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ff2e63;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+  gap: 15%;
+}
+.loader__zombie {
+  background-image: url("../images/ZombChase.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: var(--zombHeight);
+  aspect-ratio: 0.673;
+}
+.loader__dude {
+  background-image: url("../images/CoolGuyRun.gif");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(7%);
+  height: var(--playerHeigth);
+  aspect-ratio: 0.673;
+}
+#loading__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 50px;
+  font-family: var(--font2);
+  color: #fff;
+}
+#loading__text::after {
+  content: "";
+  animation: Loading 2s steps(3) infinite;
+}
+
 #rotate__phone {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  background-color: #fff;
   background-image: url("../images/RotatePhone.png");
   background-repeat: no-repeat;
   background-size: contain;
@@ -200,6 +243,7 @@ section {
 .node {
   background-image: url("../images/node.png");
 }
+
 .cool__guy__container {
   animation-name: Idle;
   animation-duration: 0.8s;
@@ -340,6 +384,9 @@ section {
 }
 .scatch {
   background-image: url("../images/projects/scatch.gif");
+}
+.editor {
+  background-image: url("../images/projects/editor.png");
 }
 .project__img {
   position: relative;
@@ -623,7 +670,10 @@ section {
   justify-content: space-around;
   align-items: center;
 }
-
+.social__link {
+  color: white;
+  text-decoration: none;
+}
 .shake {
   animation: shake 0.1s forwards;
 }
@@ -684,13 +734,27 @@ section {
   }
 }
 
+@keyframes Loading {
+  0% {
+    content: "       ";
+  }
+  25% {
+    content: " .     ";
+  }
+  75% {
+    content: " . .   ";
+  }
+  100% {
+    content: " . . . ";
+  }
+}
+
 /* Media queries */
 @media (max-width: 1075px) {
   .intro__text {
     font-size: 35px;
   }
 }
-
 @media (max-width: 950px) {
   .intro__text {
     font-size: 25px;
@@ -732,6 +796,9 @@ section {
   }
 
   /* These changes took a lot of time phew!! */
+  #loading__text {
+    font-size: 20px;
+  }
   .about__subtitle {
     font-size: 30px;
     font-weight: bold;
@@ -767,6 +834,9 @@ section {
   .target {
     width: var(--targetMobileSize);
     height: var(--targetMobileSize);
+  }
+  .social__link {
+    font-size: 10px;
   }
 }
 

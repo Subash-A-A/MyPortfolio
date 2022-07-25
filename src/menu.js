@@ -5,6 +5,8 @@ const sections = ["#home", "#about", "#project", "#contact"]
 
 const navCircleMenu = document.querySelector(".nav__circles__container")
 
+MoveToPage("#home")
+
 window.addEventListener("hashchange", () => {
   removeActive()
   var hash = window.location.hash
@@ -27,7 +29,7 @@ toggle.addEventListener("click", () => {
 })
 
 function MoveToPage(url) {
-  window.location.href = "#" + url
+  window.location.href = url
 }
 
 function removeActive() {

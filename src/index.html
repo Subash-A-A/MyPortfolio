@@ -10,15 +10,19 @@
     <script src="coolGuyLook.js" defer></script>
     <script src="project.js" defer></script>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="../images/coolGuyHead.png" />
   </head>
   <body>
+    <div id="pre__loader">
+      <div class="loader__zombie"></div>
+      <div id="loading__text">Loading</div>
+      <div class="loader__dude"></div>
+    </div>
     <div id="rotate__phone"></div>
     <ul class="nav__circles__container">
-      <li class="nav__circle active" onclick="MoveToPage('home')"></li>
-      <li class="nav__circle" onclick="MoveToPage('about')"></li>
-      <li class="nav__circle" onclick="MoveToPage('project')"></li>
-      <li class="nav__circle" onclick="MoveToPage('contact')"></li>
+      <li class="nav__circle active" onclick="MoveToPage('#home')"></li>
+      <li class="nav__circle" onclick="MoveToPage('#about')"></li>
+      <li class="nav__circle" onclick="MoveToPage('#project')"></li>
+      <li class="nav__circle" onclick="MoveToPage('#contact')"></li>
     </ul>
     <audio src="../audio/gunShoot.wav" id="audio"></audio>
     <div id="mobile__menu" class="mobile__menu" aria-expanded="false">
@@ -134,6 +138,11 @@
               <div class="project__title">Sweet Catch (Unity)</div>
             </div>
           </div>
+          <div class="project__div">
+            <div class="editor project__img">
+              <div class="project__title">HTML CSS JS Editor</div>
+            </div>
+          </div>
         </div>
         <div class="zomb__container position__left flip">
           <div class="zomb__guy__chase"></div>
@@ -144,10 +153,31 @@
     <footer class="footer">
       <h2 class="email">it.subashaa@gmail.com</h2>
       <div class="socials">
-        <div class="github">Github</div>
-        <div class="linkedin">Linkedin</div>
-        <div class="instagram">Instagram</div>
-        <div class="twitter">Twitter</div>
+        <a
+          class="github social__link"
+          href="https://github.com/Subash-A-A"
+          target="_blank"
+        >
+          Github
+        </a>
+        <a
+          class="linkedin social__link"
+          href="https://www.linkedin.com/in/subash-a-a-4133421bb"
+          target="_blank"
+          >Linkedin</a
+        >
+        <a
+          class="instagram social__link"
+          href="https://www.instagram.com/a_a_subash/"
+          target="_blank"
+          >Instagram</a
+        >
+        <a
+          class="twitter social__link"
+          target="_blank"
+          href="https://twitter.com/a_a_subash"
+          >Twitter</a
+        >
       </div>
     </footer>
   </body>
