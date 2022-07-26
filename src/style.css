@@ -45,6 +45,9 @@ section {
   justify-content: center;
   align-items: center;
 }
+.section__container {
+  display: none;
+}
 #pre__loader {
   position: fixed;
   top: 0;
@@ -59,14 +62,14 @@ section {
   gap: 15%;
 }
 .loader__zombie {
-  background-image: url("../images/ZombChase.gif");
+  background-image: url("../static/a_images/ZombChase.gif");
   background-repeat: no-repeat;
   background-size: contain;
   height: var(--zombHeight);
   aspect-ratio: 0.673;
 }
 .loader__dude {
-  background-image: url("../images/CoolGuyRun.gif");
+  background-image: url("../static/a_images/CoolGuyRun.gif");
   background-repeat: no-repeat;
   background-size: contain;
   transform: translateY(7%);
@@ -95,7 +98,7 @@ section {
   width: 100vw;
   height: 100vh;
   background-color: #fff;
-  background-image: url("../images/RotatePhone.png");
+  background-image: url("../static/a_images/RotatePhone.png");
   background-repeat: no-repeat;
   background-size: contain;
   display: none;
@@ -115,7 +118,7 @@ section {
 .about__page {
   width: 100vw;
   height: 100vh;
-  cursor: url(../images/Crosshair-Green.png) 30 30, auto;
+  cursor: url(../static/a_images/Crosshair-Green.png) 30 30, auto;
   position: relative;
   display: flex;
   justify-content: center;
@@ -200,7 +203,7 @@ section {
   gap: 20px;
 }
 .target {
-  cursor: url(../images/Crosshair-Red.png) 30 30, auto;
+  cursor: url(../static/a_images/Crosshair-Red.png) 30 30, auto;
   width: var(--targetSize);
   height: var(--targetSize);
   transform-origin: center bottom;
@@ -217,31 +220,31 @@ section {
 }
 
 .unity {
-  background-image: url("../images/unity.png");
+  background-image: url("../static/a_images/unity.png");
 }
 .html {
-  background-image: url("../images/html.png");
+  background-image: url("../static/a_images/html.png");
 }
 .css {
-  background-image: url("../images/css-3.png");
+  background-image: url("../static/a_images/css-3.png");
 }
 .js {
-  background-image: url("../images/java-script.png");
+  background-image: url("../static/a_images/java-script.png");
 }
 .react {
-  background-image: url("../images/react.png");
+  background-image: url("../static/a_images/react.png");
 }
 .java {
-  background-image: url("../images/java.png");
+  background-image: url("../static/a_images/java.png");
 }
 .python {
-  background-image: url("../images/python.png");
+  background-image: url("../static/a_images/python.png");
 }
 .mongodb {
-  background-image: url("../images/mongo.png");
+  background-image: url("../static/a_images/mongo.png");
 }
 .node {
-  background-image: url("../images/node.png");
+  background-image: url("../static/a_images/node.png");
 }
 
 .cool__guy__container {
@@ -256,7 +259,7 @@ section {
   position: relative;
   width: 400px;
   height: 400px;
-  background-image: url("../images/coolGuyFull.png");
+  background-image: url("../static/a_images/coolGuyFull.png");
   background-repeat: no-repeat;
   background-size: contain;
   transition: all 0.02s ease;
@@ -268,7 +271,7 @@ section {
   transform: translate(-0%, -50%);
   width: 170px;
   height: 170px;
-  background-image: url("../images/Pistol.png");
+  background-image: url("../static/a_images/Pistol.png");
   background-size: contain;
   transform-origin: left center;
 }
@@ -287,11 +290,11 @@ section {
   height: 300px;
 }
 .grass__platform {
-  background-image: url("../images/GrassPlatform.png");
+  background-image: url("../static/a_images/GrassPlatform.png");
   z-index: 4;
 }
 .front__grass__layer {
-  background-image: url("../images/GrassLayerForPlatform.png");
+  background-image: url("../static/a_images/GrassLayerForPlatform.png");
   z-index: 6;
 }
 /* Contact Page */
@@ -299,34 +302,6 @@ section {
   position: relative;
   background-color: var(--primary2);
   color: #fff;
-}
-.project__display {
-  position: relative;
-  width: 60vw;
-  height: 65vh;
-  border-radius: 30px;
-  background-color: #00203b;
-}
-.project__div {
-  width: 100%;
-  height: 0%;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  transform-origin: center;
-  transform: scale(0) rotateX(180deg);
-  filter: blur(10px);
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s ease;
-  cursor: pointer;
-}
-.active__project {
-  opacity: 1;
-  filter: blur(0px);
-  transform: scale(1) rotateX(0deg);
-  height: 100%;
-  display: flex;
 }
 
 .position__right {
@@ -343,7 +318,7 @@ section {
   flex-direction: column;
 }
 .zomb__guy__chase {
-  background-image: url("../images/ZombIdle.gif");
+  background-image: url("../static/a_images/ZombIdle.gif");
   height: var(--zombHeight);
   aspect-ratio: 0.673;
   background-size: contain;
@@ -360,42 +335,41 @@ section {
   transform: rotateX(-90deg) rotateY(-180deg);
 }
 .zomb__guy__chase:hover {
-  background-image: url("../images/ZombChase.gif");
+  background-image: url("../static/a_images/ZombChase.gif");
 }
 
-/* Projects URL */
-.tesla {
-  background-image: url("../images/projects/tesla.png");
+.project__display {
+  position: relative;
+  width: 60vw;
+  height: 65vh;
+  border-radius: 30px;
+  background-color: #00203b;
 }
-.netflix {
-  background-image: url("../images/projects/netflix.png");
+.project__div {
+  position: relative;
+  width: 100%;
+  height: 0%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform-origin: center;
+  transform: scale(0) rotateX(180deg);
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
-.ggspot {
-  background-image: url("../images/projects/ggspot.png");
-}
-.pomodoro {
-  background-image: url("../images/projects/pomodoro.png");
-}
-.sandl {
-  background-image: url("../images/projects/sandl.png");
-}
-.kguy {
-  background-image: url("../images/projects/kguy.gif");
-}
-.scatch {
-  background-image: url("../images/projects/scatch.gif");
-}
-.editor {
-  background-image: url("../images/projects/editor.png");
+
+.active__project {
+  opacity: 1;
+  transform: scale(1) rotateX(0deg);
+  height: 100%;
 }
 .project__img {
   position: relative;
-  width: 85%;
+  width: 80%;
   aspect-ratio: 16/9;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: all 0.5s ease;
-  z-index: 3;
+  transition: all 0.3s ease;
 }
 .project__title {
   position: absolute;
@@ -406,26 +380,16 @@ section {
   font-family: var(--font2);
   font-size: 42px;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
+  user-select: none;
   z-index: 5;
 }
 
-.project__img::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0%;
-  background-color: #348fde69;
-  transition: all 0.3s ease;
+.project__img:hover {
+  filter: blur(5px) grayscale(80%);
 }
-
-.project__img:hover::before {
-  backdrop-filter: blur(5px);
-  height: 100%;
-}
-.project__img:hover .project__title {
+.project__div:hover .project__title {
+  transition-delay: 0.2s;
   opacity: 1;
   filter: blur(0px);
 }

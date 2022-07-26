@@ -50,7 +50,3 @@ function enableScroll() {
 }
 
 disableScroll()
-
-window.addEventListener("load", () => {
-  loader.style.display = "none"
-})

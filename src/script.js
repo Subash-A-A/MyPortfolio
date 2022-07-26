@@ -1,8 +1,8 @@
 import "./style.css"
 import * as THREE from "three"
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
-import * as dat from "dat.gui"
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js"
+// import * as dat from "dat.gui"
+// import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader"
 import gsap from "gsap"
 
 // Debug
@@ -18,6 +18,16 @@ const scene = new THREE.Scene()
 const geometry = new THREE.IcosahedronGeometry(0.55, 0)
 const cubeGeometry = new THREE.BoxGeometry(0.7, 0.7, 0.7, 1, 1, 1)
 // const geometry1 = new THREE.IcosahedronGeometry(0.69, 0);
+
+const rotatePhone = document.getElementById("rotate__phone")
+const sectionContainer = document.querySelector(".section__container")
+
+if (window.innerWidth < window.innerHeight) {
+  rotatePhone.style.display = "block"
+} else {
+  rotatePhone.style.display = "none"
+  sectionContainer.style.display = "initial"
+}
 
 // Materials
 
@@ -66,7 +76,12 @@ if (window.innerWidth >= 945 && window.innerWidth >= window.innerHeight) {
   sphere.scale.set(0.7, 0.7, 0.7)
 }
 
-console.log(distX)
+timeline.paused(true)
+
+window.addEventListener("load", () => {
+  loader.style.display = "none"
+  timeline.play(true)
+})
 
 timeline
   .fromTo(
@@ -136,17 +151,8 @@ const sizes = {
   width: window.innerWidth,
   height: window.innerHeight,
 }
-const rotatePhone = document.getElementById("rotate__phone")
-
-if (window.innerWidth < window.innerHeight) {
-  rotatePhone.style.display = "block"
-} else {
-  rotatePhone.style.display = "none"
-}
 
 window.addEventListener("resize", () => {
-  // Update about__canvas
-
   // Update sizes
   location.reload()
   sizes.width = window.innerWidth
