@@ -24,9 +24,9 @@ const sectionContainer = document.querySelector(".section__container")
 
 if (window.innerWidth < window.innerHeight) {
   rotatePhone.style.display = "block"
+  sectionContainer.style.display = "none"
 } else {
   rotatePhone.style.display = "none"
-  sectionContainer.style.display = "initial"
 }
 
 // Materials
