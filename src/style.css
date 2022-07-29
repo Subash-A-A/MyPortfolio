@@ -13,7 +13,7 @@
   --heroBg: #fff;
   --footerBg: #000;
   --footerHeight: 50vh;
-  --targetSize: 70px;
+  --targetSize: 3.5vw;
   --targetMobileSize: 30px;
   --logoSize: 34px;
   --letterSpacing: 10px;
@@ -148,8 +148,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 350px;
-  height: 350px;
+  width: 18vw;
+  height: 18vw;
   color: rgb(31, 31, 31);
   padding: 30px;
   border-radius: 15px;
@@ -161,7 +161,7 @@ section {
 .about__subtitle {
   transition: all 0.4s ease;
   font-family: var(--font2);
-  font-size: 40px;
+  font-size: 2vw;
   color: #00203b;
   padding: 10px 20px;
   border-radius: 15px;
@@ -181,8 +181,8 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 350px;
-  height: 350px;
+  width: 18vw;
+  height: 18vw;
   gap: 20px;
   text-align: center;
   box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.247);
@@ -198,7 +198,9 @@ section {
 .target__box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 1vw;
+  width: 18vw;
+  height: 18vw;
 }
 .target {
   cursor: url(../static/a_images/Crosshair-Red.png) 30 30, auto;
@@ -710,9 +712,29 @@ section {
 }
 
 /* Media queries */
+
+@media (min-width: 1575px) {
+  .about__container {
+    width: 350px;
+    height: 350px;
+    transform: scale(1);
+  }
+}
+@media (max-width: 1375px) {
+  .about__container {
+    width: 250px;
+    height: 250px;
+    transform: scale(0.7);
+  }
+}
 @media (max-width: 1075px) {
   .intro__text {
     font-size: 35px;
+  }
+  .about__container {
+    width: 200px;
+    height: 200px;
+    transform: scale(0.8);
   }
 }
 @media (max-width: 950px) {
@@ -784,7 +806,7 @@ section {
   .about__container {
     width: 150px;
     height: 150px;
-    transform: scale(0.5);
+    transform: scale(0.4);
   }
   .target__box {
     gap: 10px;
@@ -805,11 +827,5 @@ section {
     width: 90px;
     height: 90px;
     transform: scale(0.4);
-  }
-}
-
-@media (min-width: 830px) {
-  .menu {
-    display: none;
   }
 }

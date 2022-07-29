@@ -7,7 +7,6 @@ import gsap from "gsap"
 
 // Debug
 // const gui = new dat.GUI();
-
 // Canvas
 const canvas = document.querySelector("canvas.webgl")
 
@@ -33,19 +32,13 @@ if (window.innerWidth < window.innerHeight) {
 
 const material = new THREE.MeshBasicMaterial()
 material.wireframe = true
-material.wireframeLinewidth = 6
+// material.wireframeLinewidth = 6
 material.color = new THREE.Color(0x3490de)
 
 const material1 = new THREE.MeshBasicMaterial()
 material1.wireframe = true
 // material1.wireframeLinewidth = 6;
-// material1.wireframe = true;
 material1.color = new THREE.Color(0xff2e63)
-
-// const material1 = new THREE.MeshStandardMaterial();
-// material1.roughness = 0.5;
-// material.metalness = 0.5;
-// material1.color = new THREE.Color(0x050505);
 
 // Mesh
 const sphere = new THREE.Mesh(geometry, material)
