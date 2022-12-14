@@ -59,6 +59,15 @@ section {
   z-index: 998;
   gap: 15%;
 }
+.front-box {
+  position: absolute;
+  left: 0;
+  z-index: 11;
+  transform-origin: center right;
+  height: 100vh;
+  /* transform: rotate(45deg); */
+  backdrop-filter: invert(100%) hue-rotate(90deg) opacity(0.92);
+}
 .loader__zombie {
   background-image: url("../static/a_images/ZombChase.gif");
   background-repeat: no-repeat;
@@ -349,25 +358,27 @@ section {
   position: relative;
   width: 100%;
   height: 0%;
-  transform: rotateY(180deg);
   display: flex;
+  transform: rotateY(180deg);
   opacity: 0;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease;
-  cursor: pointer;
+  z-index: 3;
 }
 
 .active__project {
   opacity: 1;
   height: 100%;
   transform: rotateY(0deg);
+  z-index: 4;
 }
 .project__img {
   position: relative;
   width: 80%;
   aspect-ratio: 16/9;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .project__title {
   position: absolute;
@@ -376,17 +387,16 @@ section {
   transform: translate(-50%, -50%);
   text-align: center;
   font-family: var(--font2);
-  font-size: 42px;
+  font-size: 2vw;
   opacity: 0;
   transition: all 0.2s ease;
   user-select: none;
   z-index: 5;
 }
-
 .project__img:hover {
   filter: blur(2px) grayscale(100%);
 }
-.project__div:hover .project__title {
+.project__title__appear {
   transition-delay: 0.2s;
   opacity: 1;
 }

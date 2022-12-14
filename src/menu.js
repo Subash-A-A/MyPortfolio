@@ -39,3 +39,12 @@ function removeActive() {
     }
   })
 }
+
+window.onmousemove = (e) => {
+  let box = document.querySelector(".front-box")
+  let cursorYCoverage =
+    ((window.innerHeight - e.clientY) * 100) / window.innerHeight
+  box.style.width = e.clientX - 1 + "px"
+  box.style.borderBottomRightRadius = cursorYCoverage + "%"
+  box.style.borderTopRightRadius = 100 - cursorYCoverage + "%"
+}
