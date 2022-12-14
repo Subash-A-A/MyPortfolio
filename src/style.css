@@ -748,6 +748,9 @@ section {
   }
 }
 @media (max-width: 950px) {
+  .front-box {
+    display: none;
+  }
   .intro__text {
     font-size: 25px;
   }
